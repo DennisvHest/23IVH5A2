@@ -20,7 +20,7 @@ public class TreatmentRepository {
     @Transactional(readOnly=true)
     public List<Integer> findTreatmentsByClientId(int clientbsn) {
         return jdbcTemplate.query(
-                "SELECT treatmentcode FROM 'treatment' WHERE clientbsn = ?",
+                "SELECT treatmentcode FROM `treatment` WHERE clientbsn = ?",
                 new Object[]{clientbsn}, new TreatmentCodeRowMapper());
     }
 }
