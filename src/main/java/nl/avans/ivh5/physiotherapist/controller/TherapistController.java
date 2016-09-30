@@ -22,8 +22,15 @@ public class TherapistController {
         this.therapistRepository = therapistRepository;
     }
     
+    /**
+     * Generates a list of all Therapists in the database
+     * @param model for inserting therapists into the HTML-page
+     * @return the HTML-page with the therapist-list
+     */
     @RequestMapping(value = "/therapist", method = RequestMethod.GET)
     public String listTherapists(Model model) {
+        model.addAttribute("therapists", therapistRepository.findAll());
+        
         return "view/therapist/list";
     }
 }
