@@ -17,8 +17,14 @@ public class TherapistRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    /**
+     * Find all Therapists in the database
+     * @return the list of Therapists
+     */
     public List<Therapist> findAll() {
-        return jdbcTemplate.query("SELECT * FROM physiotherapist", new TherapistRowMapper());
+        return jdbcTemplate.query(
+                "SELECT id, firstname, lastname, dateofbirth, street, number, postalcode, phone, email FROM physiotherapist", 
+                new TherapistRowMapper());
     }
     
 }

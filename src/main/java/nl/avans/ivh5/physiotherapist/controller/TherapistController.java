@@ -27,10 +27,10 @@ public class TherapistController {
      * @param model for inserting therapists into the HTML-page
      * @return the HTML-page with the therapist-list
      */
-    @RequestMapping(value = "/therapist", method = RequestMethod.GET)
+    @RequestMapping(value = "/therapeut", method = RequestMethod.GET)
     public String listTherapists(Model model) {
         model.addAttribute("therapists", therapistRepository.findAll());
         
-        return "view/therapist/list";
+        return "views/therapist/list";
     }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Therapeuten</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>
+            <!-- Create a table containing every therapist -->
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Naam</th>
+                    <th>Leeftijd</th>
+                    <th>In dienst sinds</th>
+                    <th>Mobiel</th>
+                </tr>
+                <tr th:if="${therapists.empty}">
+                    <td colspan="5">Geen fysiotherapeuten gevonden.</td>
+                </tr>
+                <tr th:each="therapist : ${therapists}">
+                    <td th:text="${therapist.therapistId}"></td>
+                    <td th:text="${therapist.therapistName}"></td>
+                    <td th:text="${therapist.therapistAge}"></td>
+                    <td th:text="${therapist.dateStart}"></td>
+                    <td th:text="${therapist.therapistTelephoneNr}"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
