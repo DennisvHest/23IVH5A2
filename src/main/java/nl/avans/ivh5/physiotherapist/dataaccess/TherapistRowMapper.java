@@ -24,8 +24,8 @@ class TherapistRowMapper implements RowMapper<Therapist> {
     public Therapist mapRow(ResultSet rs, int i) throws SQLException {
         int therapistId = rs.getInt("id");
         String therapistName = rs.getString("firstname") + " " + rs.getString("lastname");
-        Date dateStart = new Date();//rs.getDate("datestart");
-        int therapistSSN = 1234567;//rs.getInt("bsn");
+        Date dateStart = rs.getDate("datestart");
+        int therapistSSN = rs.getInt("bsn");
         Date therapistBirthDate = rs.getDate("dateofbirth");
         String therapistAddress = rs.getString("street") + " " + rs.getInt("number");
         String therapistTelephoneNr = rs.getString("phone");

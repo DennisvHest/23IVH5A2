@@ -23,7 +23,7 @@ public class TherapistRepository {
      */
     public List<Therapist> findAll() {
         return jdbcTemplate.query(
-                "SELECT id, firstname, lastname, dateofbirth, street, number, postalcode, phone, email FROM physiotherapist", 
+                "SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email FROM physiotherapist", 
                 new TherapistRowMapper());
     }
     
