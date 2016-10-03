@@ -18,6 +18,8 @@ public class Therapist {
     private Date therapistBirthdate;
     private String ZIPCode;
     private String therapistEmail;
+    
+    public Therapist() {}
 
     public Therapist(int therapistId, int therapistSSN, String therapistName, Date dateStart, String therapistAddress, String therapistTelephoneNr, Date therapistBirthdate, String ZIPCode, String therapistEmail) {
         this.therapistId = therapistId;
@@ -73,4 +75,46 @@ public class Therapist {
     public String getTherapistEmail() {
         return therapistEmail;
     }
+    
+    //Setters
+    public void setTherapistId(int therapistId) {
+        this.therapistId = therapistId;
+    }
+
+    public void setTherapistSSN(int therapistSSN) {
+        this.therapistSSN = therapistSSN;
+    }
+
+    public void setTherapistName(String therapistName) {
+        this.therapistName = therapistName;
+    }
+
+    public void setTherapistAge(int therapistAge) {
+        this.therapistAge = therapistAge;
+    }
+
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public void setTherapistAddress(String therapistAddress) {
+        this.therapistAddress = therapistAddress;
+    }
+
+    public void setTherapistTelephoneNr(String therapistTelephoneNr) {
+        this.therapistTelephoneNr = therapistTelephoneNr;
+    }
+
+    public void setTherapistBirthdate(Date therapistBirthdate) {
+        this.therapistBirthdate = therapistBirthdate;
+    }
+
+    public void setZIPCode(String ZIPCode) {
+        this.ZIPCode = ZIPCode;
+    }
+
+    public void setTherapistEmail(String therapistEmail) {
+        this.therapistEmail = therapistEmail;
+    }
+    
 }
