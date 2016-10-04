@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.avans.ivh5.example.springmvc</groupId>
-    <artifactId>spring-boot-thymeleaf</artifactId>
+    <groupId>nl.avans.ivh5</groupId>
+    <artifactId>PhysioSystem</artifactId>
     <version>1.0</version>
-    <name>spring-boot-thymeleaf</name>
+    <name>PhysioSystem</name>
     <packaging>jar</packaging>
 
 

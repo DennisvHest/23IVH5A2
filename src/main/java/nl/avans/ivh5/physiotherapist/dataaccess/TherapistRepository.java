@@ -23,8 +23,18 @@ public class TherapistRepository {
      */
     public List<Therapist> findAll() {
         return jdbcTemplate.query(
-                "SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email FROM physiotherapist", 
+                "SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email "
+                        + "FROM physiotherapist", 
                 new TherapistRowMapper());
+    }
+
+    /**
+     * Find the Therapist with the given id
+     * @param id of the Therapist
+     * @return the found Therapist
+     */
+    public Therapist findTherapistById(int id) {
+        return jdbcTemplate.queryForObject("SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email FROM physiotherapist WHERE id = ?", new Object[]{id}, new TherapistRowMapper());
     }
     
 }
