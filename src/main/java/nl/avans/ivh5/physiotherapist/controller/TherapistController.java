@@ -1,6 +1,8 @@
 package nl.avans.ivh5.physiotherapist.controller;
 
-import nl.avans.ivh5.physiotherapist.dataaccess.TherapistRepository;
+import java.util.List;
+import nl.avans.ivh5.physiotherapist.model.Therapist;
+import nl.avans.ivh5.physiotherapist.service.TherapistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TherapistController {
     
-    private final TherapistRepository therapistRepository;
+    private final TherapistService therapistService;
     
     @Autowired
-    public TherapistController(TherapistRepository therapistRepository) {
-        this.therapistRepository = therapistRepository;
+    public TherapistController(TherapistService therapistService) {
+        this.therapistService = therapistService;
     }
     
     /**
@@ -29,7 +31,9 @@ public class TherapistController {
      */
     @RequestMapping(value = "/therapeut", method = RequestMethod.GET)
     public String listTherapists(Model model) {
-        model.addAttribute("therapists", therapistRepository.findAll());
+        List<Therapist> therapists = therapistService.findAllTherapists();
+        
+        model.addAttribute("therapists", therapists);
         
         return "views/therapist/list";
     }
