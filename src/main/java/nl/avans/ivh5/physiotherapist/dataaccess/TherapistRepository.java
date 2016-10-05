@@ -34,7 +34,7 @@ public class TherapistRepository {
      * @return the found Therapist
      */
     public Therapist findTherapistById(int id) {
-        return jdbcTemplate.queryForObject("SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email FROM physiotherapist WHERE id = ?", new Object[]{id}, new TherapistRowMapper());
+        return jdbcTemplate.queryForObject("SELECT * FROM physiotherapist WHERE id = ?", new Object[]{id}, new TherapistRowMapper());
     }
     
 }

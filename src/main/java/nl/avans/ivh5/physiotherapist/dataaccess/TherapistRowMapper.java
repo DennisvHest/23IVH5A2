@@ -23,16 +23,21 @@ class TherapistRowMapper implements RowMapper<Therapist> {
     @Override
     public Therapist mapRow(ResultSet rs, int i) throws SQLException {
         int therapistId = rs.getInt("id");
-        String therapistName = rs.getString("firstname") + " " + rs.getString("lastname");
+        String therapistFirstName = rs.getString("firstname");
+        String therapistLastName = rs.getString("lastname");
         Date dateStart = rs.getDate("datestart");
         int therapistSSN = rs.getInt("bsn");
         Date therapistBirthDate = rs.getDate("dateofbirth");
-        String therapistAddress = rs.getString("street") + " " + rs.getInt("number");
+        String therapistStreet = rs.getString("street");
+        int therapistHouseNr = rs.getInt("number");
         String therapistTelephoneNr = rs.getString("phone");
+        String therapistMobileNr = rs.getString("mobile");
         String therapistZIPCode = rs.getString("postalcode");
         String therapistEmail = rs.getString("email");
+        String therapistNote =rs.getString("note");
         
-        return new Therapist(therapistId, therapistSSN, therapistName, dateStart, therapistAddress, therapistTelephoneNr, therapistBirthDate, therapistZIPCode, therapistEmail);
+        return new Therapist(therapistId, therapistSSN, therapistFirstName, therapistLastName, therapistSSN, dateStart, therapistStreet, therapistHouseNr, therapistTelephoneNr, therapistMobileNr, therapistBirthDate, therapistZIPCode, therapistEmail, therapistNote);
+        
     }
     
 }

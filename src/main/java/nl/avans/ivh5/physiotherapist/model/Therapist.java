@@ -10,31 +10,38 @@ public class Therapist {
     
     private int therapistId;
     private int therapistSSN;
-    private String therapistName;
+    private String therapistFirstName;
+    private String therapistLastName;
     private int therapistAge;
     private Date dateStart;
-    private String therapistAddress;
+    private String therapistStreet;
+    private int therapistHouseNr;
     private String therapistTelephoneNr;
+    private String therapistMobileNr;
     private Date therapistBirthdate;
     private String ZIPCode;
     private String therapistEmail;
+    private String therapistNote;
     
     public Therapist() {}
 
-    public Therapist(int therapistId, int therapistSSN, String therapistName, Date dateStart, String therapistAddress, String therapistTelephoneNr, Date therapistBirthdate, String ZIPCode, String therapistEmail) {
+    public Therapist(int therapistId, int therapistSSN, String therapistFirstName, String therapistLastName, int therapistAge, Date dateStart, String therapistStreet, int therapistHouseNr, String therapistTelephoneNr, String therapistMobileNr, Date therapistBirthdate, String ZIPCode, String therapistEmail, String therapistNote) {
         this.therapistId = therapistId;
         this.therapistSSN = therapistSSN;
-        this.therapistName = therapistName;
+        this.therapistFirstName = therapistFirstName;
+        this.therapistLastName = therapistLastName;
+        this.therapistAge = therapistAge;
         this.dateStart = dateStart;
-        this.therapistAddress = therapistAddress;
+        this.therapistStreet = therapistStreet;
+        this.therapistHouseNr = therapistHouseNr;
         this.therapistTelephoneNr = therapistTelephoneNr;
+        this.therapistMobileNr = therapistMobileNr;
         this.therapistBirthdate = therapistBirthdate;
         this.ZIPCode = ZIPCode;
         this.therapistEmail = therapistEmail;
-        
-        therapistAge = new Date().getYear() - therapistBirthdate.getYear();
+        this.therapistNote = therapistNote;
     }
-    
+
     //Getters
     public int getTherapistId() {
         return therapistId;
@@ -44,8 +51,12 @@ public class Therapist {
         return therapistSSN;
     }
 
-    public String getTherapistName() {
-        return therapistName;
+    public String getTherapistFirstName() {
+        return therapistFirstName;
+    }
+
+    public String getTherapistLastName() {
+        return therapistLastName;
     }
 
     public int getTherapistAge() {
@@ -56,12 +67,20 @@ public class Therapist {
         return dateStart;
     }
 
-    public String getTherapistAddress() {
-        return therapistAddress;
+    public String getTherapistStreet() {
+        return therapistStreet;
+    }
+
+    public int getTherapistHouseNr() {
+        return therapistHouseNr;
     }
 
     public String getTherapistTelephoneNr() {
         return therapistTelephoneNr;
+    }
+
+    public String getTherapistMobileNr() {
+        return therapistMobileNr;
     }
 
     public Date getTherapistBirthdate() {
@@ -75,46 +94,9 @@ public class Therapist {
     public String getTherapistEmail() {
         return therapistEmail;
     }
-    
-    //Setters
-    public void setTherapistId(int therapistId) {
-        this.therapistId = therapistId;
-    }
 
-    public void setTherapistSSN(int therapistSSN) {
-        this.therapistSSN = therapistSSN;
-    }
-
-    public void setTherapistName(String therapistName) {
-        this.therapistName = therapistName;
-    }
-
-    public void setTherapistAge(int therapistAge) {
-        this.therapistAge = therapistAge;
-    }
-
-    public void setDateStart(Date dateStart) {
-        this.dateStart = dateStart;
-    }
-
-    public void setTherapistAddress(String therapistAddress) {
-        this.therapistAddress = therapistAddress;
-    }
-
-    public void setTherapistTelephoneNr(String therapistTelephoneNr) {
-        this.therapistTelephoneNr = therapistTelephoneNr;
-    }
-
-    public void setTherapistBirthdate(Date therapistBirthdate) {
-        this.therapistBirthdate = therapistBirthdate;
-    }
-
-    public void setZIPCode(String ZIPCode) {
-        this.ZIPCode = ZIPCode;
-    }
-
-    public void setTherapistEmail(String therapistEmail) {
-        this.therapistEmail = therapistEmail;
+    public String getTherapistNote() {
+        return therapistNote;
     }
     
 }

@@ -24,7 +24,7 @@
                 </tr>
                 <tr th:each="therapist : ${therapists}">
                     <td th:text="${therapist.therapistId}"></td>
-                    <td th:text="${therapist.therapistName}"></td>
+                    <td th:text="${therapist.therapistFirstName} + ' ' + therapist.therapistLastName"></td>
                     <td th:text="${therapist.therapistAge}"></td>
                     <td th:text="${therapist.dateStart}"></td>
                     <td th:text="${therapist.therapistTelephoneNr}"></td>
