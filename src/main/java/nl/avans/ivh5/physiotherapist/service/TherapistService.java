@@ -37,4 +37,5 @@ public class TherapistService {
     public Therapist findTherapist(int id) {
         return therapistRepository.findTherapistById(id);
     }
+    
 }
