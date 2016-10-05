@@ -45,7 +45,7 @@ public class TherapistController {
      * @param id of the Therapist
      * @return the HTML-page
      */
-    @RequestMapping(value = "/therapist/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/therapeut/{id}", method = RequestMethod.GET)
     public String listTherapist(Model model, @PathVariable int id) {
         Therapist therapist = therapistService.findTherapist(id);
         
