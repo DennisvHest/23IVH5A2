@@ -22,10 +22,7 @@ public class TherapistRepository {
      * @return the list of Therapists
      */
     public List<Therapist> findAll() {
-        return jdbcTemplate.query(
-                "SELECT id, firstname, lastname, datestart, dateofbirth, street, number, postalcode, bsn, phone, email "
-                        + "FROM physiotherapist", 
-                new TherapistRowMapper());
+        return jdbcTemplate.query("SELECT * FROM physiotherapist", new TherapistRowMapper());
     }
 
     /**
@@ -34,7 +31,8 @@ public class TherapistRepository {
      * @return the found Therapist
      */
     public Therapist findTherapistById(int id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM physiotherapist WHERE id = ?", new Object[]{id}, new TherapistRowMapper());
+        return jdbcTemplate.queryForObject("SELECT * FROM physiotherapist WHERE id = ?"
+                , new Object[]{id}, new TherapistRowMapper());
     }
     
 }

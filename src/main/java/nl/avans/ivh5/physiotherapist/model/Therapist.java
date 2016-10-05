@@ -99,4 +99,62 @@ public class Therapist {
         return therapistNote;
     }
     
+    //Setters
+    public void setTherapistId(int therapistId) {
+        this.therapistId = therapistId;
+    }
+
+    public void setTherapistSSN(int therapistSSN) {
+        this.therapistSSN = therapistSSN;
+    }
+
+    public void setTherapistFirstName(String therapistFirstName) {
+        this.therapistFirstName = therapistFirstName;
+    }
+
+    public void setTherapistLastName(String therapistLastName) {
+        this.therapistLastName = therapistLastName;
+    }
+
+    public void setTherapistAge(int therapistAge) {
+        this.therapistAge = therapistAge;
+    }
+
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public void setTherapistStreet(String therapistStreet) {
+        this.therapistStreet = therapistStreet;
+    }
+
+    public void setTherapistHouseNr(int therapistHouseNr) {
+        this.therapistHouseNr = therapistHouseNr;
+    }
+
+    public void setTherapistTelephoneNr(String therapistTelephoneNr) {
+        this.therapistTelephoneNr = therapistTelephoneNr;
+    }
+
+    public void setTherapistMobileNr(String therapistMobileNr) {
+        this.therapistMobileNr = therapistMobileNr;
+    }
+
+    public void setTherapistBirthdate(Date therapistBirthdate) {
+        this.therapistBirthdate = therapistBirthdate;
+    }
+
+    public void setZIPCode(String ZIPCode) {
+        this.ZIPCode = ZIPCode;
+    }
+
+    public void setTherapistEmail(String therapistEmail) {
+        this.therapistEmail = therapistEmail;
+    }
+
+    public void setTherapistNote(String therapistNote) {
+        this.therapistNote = therapistNote;
+    }
+    
+    
 }

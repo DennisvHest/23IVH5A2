@@ -53,12 +53,12 @@ public class TherapistTest {
      * Test of getTherapistName method, of class Therapist.
      */
     @Test
-    public void testGetTherapistName() {
+    public void testGetTherapistFirstName() {
         System.out.println("getTherapistName");
         Therapist instance = new Therapist();
-        instance.setTherapistName("Jannie de Bruijn");
-        String expResult = "Jannie de Bruijn";
-        String result = instance.getTherapistName();
+        instance.setTherapistFirstName("Jannie");
+        String expResult = "Jannie";
+        String result = instance.getTherapistFirstName();
         assertEquals(expResult, result);
     }
 
@@ -85,19 +85,6 @@ public class TherapistTest {
         instance.setDateStart(new Date(2015, 8, 12));
         Date expResult = new Date(2015, 8, 12);
         Date result = instance.getDateStart();
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of getTherapistAddress method, of class Therapist.
-     */
-    @Test
-    public void testGetTherapistAddress() {
-        System.out.println("getTherapistAddress");
-        Therapist instance = new Therapist();
-        instance.setTherapistAddress("eenstraat 12");
-        String expResult = "eenstraat 12";
-        String result = instance.getTherapistAddress();
         assertEquals(expResult, result);
     }
 
@@ -150,6 +137,71 @@ public class TherapistTest {
         instance.setTherapistEmail("janniedebruijn@gmail.com");
         String expResult = "janniedebruijn@gmail.com";
         String result = instance.getTherapistEmail();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTherapistLastName method, of class Therapist.
+     */
+    @Test
+    public void testGetTherapistLastName() {
+        System.out.println("getTherapistLastName");
+        Therapist instance = new Therapist();
+        instance.setTherapistLastName("de Bruijn");
+        String expResult = "de Bruijn";
+        String result = instance.getTherapistLastName();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTherapistStreet method, of class Therapist.
+     */
+    @Test
+    public void testGetTherapistStreet() {
+        System.out.println("getTherapistStreet");
+        Therapist instance = new Therapist();
+        instance.setTherapistStreet("eenstraat");
+        String expResult = "eenstraat";
+        String result = instance.getTherapistStreet();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTherapistHouseNr method, of class Therapist.
+     */
+    @Test
+    public void testGetTherapistHouseNr() {
+        System.out.println("getTherapistHouseNr");
+        Therapist instance = new Therapist();
+        instance.setTherapistHouseNr(12);
+        int expResult = 12;
+        int result = instance.getTherapistHouseNr();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTherapistMobileNr method, of class Therapist.
+     */
+    @Test
+    public void testGetTherapistMobileNr() {
+        System.out.println("getTherapistMobileNr");
+        Therapist instance = new Therapist();
+        instance.setTherapistMobileNr("0612345678");
+        String expResult = "0612345678";
+        String result = instance.getTherapistMobileNr();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getTherapistNote method, of class Therapist.
+     */
+    @Test
+    public void testGetTherapistNote() {
+        System.out.println("getTherapistNote");
+        Therapist instance = new Therapist();
+        instance.setTherapistNote("Ik weet het niet");
+        String expResult = "Ik weet het niet";
+        String result = instance.getTherapistNote();
         assertEquals(expResult, result);
     }
     

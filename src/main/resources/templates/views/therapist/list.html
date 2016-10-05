@@ -24,10 +24,10 @@
                 </tr>
                 <tr th:each="therapist : ${therapists}">
                     <td th:text="${therapist.therapistId}"></td>
-                    <td th:text="${therapist.therapistFirstName} + ' ' + therapist.therapistLastName"></td>
+                    <td><a th:href="'/therapeut/' + ${therapist.therapistId}" th:text="${therapist.therapistFirstName} + ' ' + ${therapist.therapistLastName}"></a></td>
                     <td th:text="${therapist.therapistAge}"></td>
                     <td th:text="${therapist.dateStart}"></td>
-                    <td th:text="${therapist.therapistTelephoneNr}"></td>
+                    <td th:text="${therapist.therapistMobileNr}"></td>
                 </tr>
             </table>
         </div>
