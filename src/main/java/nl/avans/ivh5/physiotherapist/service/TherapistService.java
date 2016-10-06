@@ -10,19 +10,19 @@ import org.springframework.stereotype.Service;
  *
  * @author Dennis
  */
-
 @Service
 public class TherapistService {
-    
+
     private TherapistRepository therapistRepository;
-    
+
     @Autowired
     public TherapistService(TherapistRepository therapistRepository) {
         this.therapistRepository = therapistRepository;
     }
-    
+
     /**
      * Returns the list of Therapist-objects found by the TherapistRepository
+     *
      * @return the list of Therapist-objects
      */
     public List<Therapist> findAllTherapists() {
@@ -30,12 +30,28 @@ public class TherapistService {
     }
 
     /**
-     * Returns the Therapist-object with the given id found by the TherapistRepository
+     * Returns the Therapist-object with the given id found by the
+     * TherapistRepository
+     *
      * @param id of the Therapist
      * @return the found Therapist
      */
     public Therapist findTherapist(int id) {
         return therapistRepository.findTherapistById(id);
     }
-    
+
+    /**
+     * Asks the TherapistRepository to change the Therapists data in the
+     * database
+     *
+     * @param therapist to be changed
+     */
+    public void changeTherapist(Therapist therapist) {
+        therapistRepository.saveTherapist(therapist);
+    }
+
+//    public List<Therapist> findTherapistsByTerm(String term) {
+//        
+//    }
+
 }

@@ -1,6 +1,7 @@
 package nl.avans.ivh5.physiotherapist.model;
 
 import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -13,12 +14,18 @@ public class Therapist {
     private String therapistFirstName;
     private String therapistLastName;
     private int therapistAge;
+    
+    @DateTimeFormat (pattern="yyyy-MM-dd") 
     private Date dateStart;
+    
     private String therapistStreet;
     private int therapistHouseNr;
     private String therapistTelephoneNr;
     private String therapistMobileNr;
+    
+    @DateTimeFormat (pattern="yyyy-MM-dd") 
     private Date therapistBirthdate;
+    
     private String ZIPCode;
     private String therapistEmail;
     private String therapistNote;

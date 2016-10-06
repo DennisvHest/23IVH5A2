@@ -7,26 +7,30 @@
         <title th:text="'Therapeut - ' + ${therapist.therapistFirstName} + ' ' + ${therapist.therapistLastName}"></title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     </head>
     <body>
         <div>
             <!-- A form with the Therapist's data with a button to save changes -->
-            <form method='post'>
-                <label>Voornaam</label><input type="text" name="firstName" th:value="${therapist.therapistFirstName}"/>
-                <label>Achternaam</label><input type="text" name="lastName" th:value="${therapist.therapistLastName}"/>
-                <label>Geboortedatum</label><input type="date" name="birthDate" th:value="${therapist.therapistBirthdate}"/>
-                <label>In dienst sinds</label><input type="date" name="dateStart" th:value="${therapist.dateStart}"/>
-                <label>Straat</label><input type="text" name="street" th:value="${therapist.therapistStreet}"/>
-                <label>HuisNr</label><input type="text" name="houseNr" th:value="${therapist.therapistHouseNr}"/>
-                <label>BSN</label><input type="text" name="SSN" th:value="${therapist.therapistSSN}"/>
-                <label>Postcode</label><input type="text" name="ZIPCode" th:value="${therapist.ZIPCode}"/>
-                <label>Telefoonnummer</label><input type="text" name="telephoneNr" th:value="${therapist.therapistTelephoneNr}"/>
-                <label>Woonplaats</label><input type="text" name="firstName" th:value="${therapist.therapistFirstName} + ' ' + ${therapist.therapistLastName}"/>
-                <label>Mobiel</label><input type="text" name="mobileNr" th:value="${therapist.therapistMobileNr}"/>
+            <form method="post" th:action="@{/therapeut/opslaan}" th:object="${therapist}">
+                <input type="hidden" th:field="*{therapistId}" th:value="${therapist.therapistId}"/>
+                <label>Voornaam</label><input type="text" th:field="*{therapistFirstName}" th:value="${therapist.therapistFirstName}"/>
+                <label>Achternaam</label><input type="text" th:field="*{therapistLastName}" th:value="${therapist.therapistLastName}"/>
+                <label>Geboortedatum</label><input type="date" th:field="*{therapistBirthdate}" th:value="${therapist.therapistBirthdate}"/>
+                <label>In dienst sinds</label><input type="date" th:field="*{dateStart}" th:value="${therapist.dateStart}"/>
+                <label>Straat</label><input type="text" th:field="*{therapistStreet}" th:value="${therapist.therapistStreet}"/>
+                <label>HuisNr</label><input type="text" th:field="*{therapistHouseNr}" th:value="${therapist.therapistHouseNr}"/>
+                <label>BSN</label><input type="text" th:field="*{therapistSSN}" th:value="${therapist.therapistSSN}"/>
+                <label>Postcode</label><input type="text" th:field="*{ZIPCode}" th:value="${therapist.ZIPCode}"/>
+                <label>Telefoonnummer</label><input type="text" th:field="*{therapistTelephoneNr}" th:value="${therapist.therapistTelephoneNr}"/>
+                <label>Woonplaats</label><input type="text" name="place" th:value="${therapist.therapistFirstName} + ' ' + ${therapist.therapistLastName}"/>
+                <label>Mobiel</label><input type="text" th:field="*{therapistMobileNr}" th:value="${therapist.therapistMobileNr}"/>
                 <label>Wachtwoord</label><input type="text" name="password" th:value="${therapist.therapistFirstName}"/>
-                <label>E-mail</label><input type="email" name="email" th:value="${therapist.therapistEmail}"/>
+                <label>E-mail</label><input type="email" th:field="*{therapistEmail}" th:value="${therapist.therapistEmail}"/>
                 <label>Wachtwoord Nogmaals</label><input type="text" name="passwordRepeat" th:value="${therapist.therapistFirstName}"/>
-                <label>Opmerkingen</label><textarea name="password" th:value="${therapist.therapistFirstName}"/>
+                <label>Opmerkingen</label><textarea th:field="*{therapistNote}" th:inline="text">[[${therapist.therapistNote}]]</textarea>
                 <button type="submit">Opslaan</button>
             </form>
         </div>

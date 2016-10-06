@@ -26,7 +26,7 @@ class TherapistRowMapper implements RowMapper<Therapist> {
         String therapistFirstName = rs.getString("firstname");
         String therapistLastName = rs.getString("lastname");
         Date dateStart = rs.getDate("datestart");
-        int therapistSSN = rs.getInt("bsn");
+        int therapistSSN = rs.getInt("ssn");
         Date therapistBirthDate = rs.getDate("dateofbirth");
         String therapistStreet = rs.getString("street");
         int therapistHouseNr = rs.getInt("number");
