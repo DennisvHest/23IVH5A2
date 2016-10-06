@@ -26,16 +26,16 @@ public class TherapistControllerTest {
     /**
      * Test of listTherapists method, of class TherapistController.
      */
-    @Test
-    public void testListTherapists() {
-        System.out.println("listTherapists");
-        Model model = null;
-        TherapistController instance = null;
-        String expResult = "";
-        String result = instance.listTherapists(model);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testListTherapists() {
+//        System.out.println("listTherapists");
+//        Model model = null;
+//        TherapistController instance = null;
+//        String expResult = "";
+//        String result = instance.listTherapists(model);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }
