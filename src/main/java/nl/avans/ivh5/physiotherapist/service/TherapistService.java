@@ -1,6 +1,7 @@
 package nl.avans.ivh5.physiotherapist.service;
 
 import java.util.List;
+import nl.avans.ivh5.exceptions.PasswordRepeatNotIdenticalException;
 import nl.avans.ivh5.physiotherapist.dataaccess.TherapistRepository;
 import nl.avans.ivh5.physiotherapist.model.Therapist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,13 +46,31 @@ public class TherapistService {
      * database
      *
      * @param therapist to be changed
+     * @param passwordRepeat for checking if the passwordRepeat is identical to
+     * the new password
+     * @throws nl.avans.ivh5.exceptions.PasswordRepeatNotIdenticalException if
+     * the new password is not identical to the passwordRepeat
      */
-    public void changeTherapist(Therapist therapist) {
-        therapistRepository.saveTherapist(therapist);
+    public void changeTherapist(Therapist therapist, String passwordRepeat) throws PasswordRepeatNotIdenticalException {
+        if (checkPasswordRepeat(therapist.getPassword(), passwordRepeat)) {
+            therapistRepository.saveTherapist(therapist);
+        } else {
+            throw new PasswordRepeatNotIdenticalException("The new password is not identical to the password repeat");
+        }
+    }
+
+    /**
+     * Checks if the new password is identical to the passwordRepeat
+     *
+     * @param password new password
+     * @param passwordRepeat repeat of the new password
+     * @return boolean (true = identical, false = not identical)
+     */
+    public boolean checkPasswordRepeat(String password, String passwordRepeat) {
+        return password.equals(passwordRepeat);
     }
 
 //    public List<Therapist> findTherapistsByTerm(String term) {
 //        
 //    }
-
 }

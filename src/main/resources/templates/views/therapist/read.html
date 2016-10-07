@@ -27,9 +27,10 @@
                 <label>Telefoonnummer</label><input type="text" th:field="*{therapistTelephoneNr}" th:value="${therapist.therapistTelephoneNr}"/>
                 <label>Woonplaats</label><input type="text" name="place" th:value="${therapist.therapistFirstName} + ' ' + ${therapist.therapistLastName}"/>
                 <label>Mobiel</label><input type="text" th:field="*{therapistMobileNr}" th:value="${therapist.therapistMobileNr}"/>
-                <label>Wachtwoord</label><input type="text" name="password" th:value="${therapist.therapistFirstName}"/>
+                <label>Wachtwoord</label><input type="text" th:field="*{password}" th:value="${therapist.password}"/>
+                <p th:text="${prniex}"></p>
                 <label>E-mail</label><input type="email" th:field="*{therapistEmail}" th:value="${therapist.therapistEmail}"/>
-                <label>Wachtwoord Nogmaals</label><input type="text" name="passwordRepeat" th:value="${therapist.therapistFirstName}"/>
+                <label>Wachtwoord Nogmaals</label><input type="text" name="passwordRepeat" th:value="${therapist.password}"/>
                 <label>Opmerkingen</label><textarea th:field="*{therapistNote}" th:inline="text">[[${therapist.therapistNote}]]</textarea>
                 <button type="submit">Opslaan</button>
             </form>

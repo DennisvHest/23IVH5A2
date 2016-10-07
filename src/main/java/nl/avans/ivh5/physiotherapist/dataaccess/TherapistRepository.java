@@ -44,7 +44,7 @@ public class TherapistRepository {
     public void saveTherapist(Therapist therapist) {
         String sql = "UPDATE physiotherapist "
                 + "SET firstname=?, lastname=?, datestart=?, dateofbirth=?, street=?, "
-                + "number=?, postalcode=?, ssn=?, phone=?, mobile=?, email=?, note=? "
+                + "number=?, postalcode=?, ssn=?, phone=?, mobile=?, email=?, note=?, password=? "
                 + "WHERE id = ?";
 
         jdbcTemplate.update((Connection connection) -> {
@@ -64,7 +64,8 @@ public class TherapistRepository {
             ps.setString(10, therapist.getTherapistMobileNr());
             ps.setString(11, therapist.getTherapistEmail());
             ps.setString(12, therapist.getTherapistNote());
-            ps.setInt(13, therapist.getTherapistId());
+            ps.setString(13, therapist.getPassword());
+            ps.setInt(14, therapist.getTherapistId());
             return ps;
         });
     }

@@ -13,12 +13,12 @@ import org.springframework.jdbc.core.RowMapper;
 class TherapistRowMapper implements RowMapper<Therapist> {
 
     /**
-     * Maps the database attributes of a Therapist
-     * to a new Therapist object
+     * Maps the database attributes of a Therapist to a new Therapist object
+     *
      * @param rs resultset from the database
      * @param i rownumber
      * @return the new Therapist-object
-     * @throws SQLException 
+     * @throws SQLException
      */
     @Override
     public Therapist mapRow(ResultSet rs, int i) throws SQLException {
@@ -34,10 +34,11 @@ class TherapistRowMapper implements RowMapper<Therapist> {
         String therapistMobileNr = rs.getString("mobile");
         String therapistZIPCode = rs.getString("postalcode");
         String therapistEmail = rs.getString("email");
-        String therapistNote =rs.getString("note");
-        
-        return new Therapist(therapistId, therapistSSN, therapistFirstName, therapistLastName, therapistSSN, dateStart, therapistStreet, therapistHouseNr, therapistTelephoneNr, therapistMobileNr, therapistBirthDate, therapistZIPCode, therapistEmail, therapistNote);
-        
+        String therapistNote = rs.getString("note");
+        String password = rs.getString("password");
+
+        return new Therapist(therapistId, therapistSSN, therapistFirstName, therapistLastName, therapistSSN, dateStart, therapistStreet, therapistHouseNr, therapistTelephoneNr, therapistMobileNr, therapistBirthDate, therapistZIPCode, therapistEmail, therapistNote, password);
+
     }
-    
+
 }

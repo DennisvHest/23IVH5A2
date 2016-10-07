@@ -8,31 +8,33 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author Dennis
  */
 public class Therapist {
-    
+
     private int therapistId;
     private int therapistSSN;
     private String therapistFirstName;
     private String therapistLastName;
     private int therapistAge;
-    
-    @DateTimeFormat (pattern="yyyy-MM-dd") 
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateStart;
-    
+
     private String therapistStreet;
     private int therapistHouseNr;
     private String therapistTelephoneNr;
     private String therapistMobileNr;
-    
-    @DateTimeFormat (pattern="yyyy-MM-dd") 
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date therapistBirthdate;
-    
+
     private String ZIPCode;
     private String therapistEmail;
     private String therapistNote;
-    
-    public Therapist() {}
+    private String password;
 
-    public Therapist(int therapistId, int therapistSSN, String therapistFirstName, String therapistLastName, int therapistAge, Date dateStart, String therapistStreet, int therapistHouseNr, String therapistTelephoneNr, String therapistMobileNr, Date therapistBirthdate, String ZIPCode, String therapistEmail, String therapistNote) {
+    public Therapist() {
+    }
+
+    public Therapist(int therapistId, int therapistSSN, String therapistFirstName, String therapistLastName, int therapistAge, Date dateStart, String therapistStreet, int therapistHouseNr, String therapistTelephoneNr, String therapistMobileNr, Date therapistBirthdate, String ZIPCode, String therapistEmail, String therapistNote, String password) {
         this.therapistId = therapistId;
         this.therapistSSN = therapistSSN;
         this.therapistFirstName = therapistFirstName;
@@ -47,6 +49,7 @@ public class Therapist {
         this.ZIPCode = ZIPCode;
         this.therapistEmail = therapistEmail;
         this.therapistNote = therapistNote;
+        this.password = password;
     }
 
     //Getters
@@ -105,7 +108,11 @@ public class Therapist {
     public String getTherapistNote() {
         return therapistNote;
     }
-    
+
+    public String getPassword() {
+        return password;
+    }
+
     //Setters
     public void setTherapistId(int therapistId) {
         this.therapistId = therapistId;
@@ -162,6 +169,9 @@ public class Therapist {
     public void setTherapistNote(String therapistNote) {
         this.therapistNote = therapistNote;
     }
-    
-    
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }
